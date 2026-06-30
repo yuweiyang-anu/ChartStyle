@@ -5,10 +5,10 @@
 ### 🏆 Accepted to ECCV 2026
 
 <p align="center">
-  Yuwei Yang<sup>1*</sup>,
-  Tianchi Xie<sup>2*</sup>,
-  Jinhong Ni<sup>1*</sup>,
-  Yukai Guo<sup>2</sup>,
+  Yuwei Yang<sup>1*†</sup>,
+  Tianchi Xie<sup>2*†</sup>,
+  Jinhong Ni<sup>1*†</sup>,
+  Yukai Guo<sup>2†</sup>,
   Jing Zhang<sup>1</sup>,
   Liang Zheng<sup>1</sup>,
   Yalong Bai<sup>3</sup>,
@@ -18,7 +18,10 @@
 <p align="center">
   <sup>1</sup>Australian National University &nbsp;&nbsp;
   <sup>2</sup>Tsinghua University &nbsp;&nbsp;
-  <sup>3</sup>Canva Research &nbsp;&nbsp;
+  <sup>3</sup>Canva Research
+</p>
+
+<p align="center">
   <sup>*</sup>Equal contribution &nbsp;&nbsp;
   <sup>†</sup>Work done during an internship at Canva
 </p>
