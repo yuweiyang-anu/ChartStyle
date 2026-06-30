@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Secrets / local config
+.env
+*.env
+
+# Pipeline & evaluation outputs
+output/
+eval_results/
+_pipeline_test/
+
+# OS / editor
+.DS_Store

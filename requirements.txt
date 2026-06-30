@@ -1,0 +1,58 @@
+# ChartForge data-generation pipeline — Python dependencies
+# =========================================================
+# Verified on Python 3.10. The version after each "# tested:" is what this
+# pipeline was last validated against; the pinned lower bounds are the minimum
+# known-good versions.
+
+# --- Core: Stage I-III generation + Stage IV-a LLM quality scoring -----------
+openai>=1.40.0           # tested: 2.33.0   (OpenAI image edit + chat judges)
+python-dotenv>=1.0.0     # tested: 1.0.1    (loads OPENAI_API_KEY from .env)
+Pillow>=9.0.0            # tested: 11.3.0   (image I/O)
+pydantic>=2.0.0          # tested: 2.12.3   (structured LLM-judge outputs)
+tqdm>=4.64.0             # tested: 4.68.1   (progress bars)
+weave>=0.50.0            # tested: 0.52.29  (LLM-as-judge tracing in stage4a)
+
+# --- Stage IV-b: OCR F1 content-preservation check (PaddleOCR) ---------------
+# NumPy/OpenCV are also used by Stage IV-b image preprocessing.
+numpy>=1.23.0            # tested: 2.2.6
+opencv-python>=4.7.0     # tested: 4.11.0.86
+paddleocr>=2.7           # tested: 2.9.1
+albumentations>=1.4      # tested: 2.0.8    (transitively required by paddleocr 2.9.x)
+
+# PaddlePaddle is intentionally NOT pinned here: the correct wheel depends on your
+# GPU/CUDA. Install exactly ONE of the following (matching your hardware):
+#   GPU, modern CUDA 12 cards (H100/H200/Hopper) -- tested on H200, driver 590, CUDA 13.1:
+#       pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu126/
+#   GPU, older CUDA 11.8 cards:
+#       pip install paddlepaddle-gpu==2.6.2          # needs CUDA 11.8 + cuDNN 8.6 visible to the loader; also: protobuf<4
+#   CPU-only (no CUDA/cuDNN; run `stage4b ... --device cpu`):
+#       pip install paddlepaddle==3.0.0
+#
+# Stage IV-b defaults to GPU (`--device gpu`). If the GPU build fails to load
+# (driver/CUDA mismatch), install the wheel that matches your CUDA, or use --device cpu.
+
+# =============================================================================
+# Evaluation (evaluation/) — benchmark inference + local scoring
+# =============================================================================
+# Reuses openai, Pillow, pydantic, tqdm, numpy, paddleocr and python-dotenv above.
+
+# --- Benchmark loading (ChartStyle-Bench Parquet from the HF Hub) ------------
+datasets>=2.18.0         # tested: 3.2.0    (load_dataset, embedded images)
+huggingface_hub>=0.23.0  # tested: 0.27.0
+loguru>=0.7.0            # tested: 0.7.3    (scorer/harness logging)
+
+# --- CLIP image-similarity scorers -------------------------------------------
+torch>=2.1.0             # tested: 2.5.1    (CLIP + Qwen pipeline; install the CUDA build for your GPU)
+torchvision>=0.16.0      # tested: 0.20.1
+ftfy>=6.0                # tested: 6.3.1    (OpenAI CLIP dependency)
+regex>=2023.0.0          # tested: 2024.11.6
+clip @ git+https://github.com/openai/CLIP.git   # OpenAI CLIP (provides `import clip`)
+
+# --- Qwen-Image-Edit base-model inference (local GPU) ------------------------
+diffusers>=0.32.0        # tested: 0.32.1   (QwenImageEditPlusPipeline)
+transformers>=4.45.0     # tested: 4.47.1
+accelerate>=0.30.0       # tested: 1.2.1
+safetensors>=0.4.0       # tested: 0.4.5
+
+# --- Nano Banana Pro inference (Google Gemini image API; standard API key) ---
+google-genai>=0.3.0      # tested: 0.8.0    (set GOOGLE_API_KEY)
