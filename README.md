@@ -329,6 +329,7 @@ Training and inference use the **Qwen-Image-Edit-2509** base model with a two-im
 
 ---
 
+<!--
 ## 📜 Citation
 
 If ChartStyle-100K is useful to your research, please consider citing our work:
@@ -342,6 +343,7 @@ If ChartStyle-100K is useful to your research, please consider citing our work:
   year      = {2026}
 }
 ```
+-->
 
 ---
 
