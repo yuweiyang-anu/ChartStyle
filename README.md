@@ -343,9 +343,9 @@ If ChartStyle-100K is useful to your research, please consider citing our work:
   year      = {2026}
 }
 ```
--->
 
 ---
+-->
 
 ## ✅ License
 
