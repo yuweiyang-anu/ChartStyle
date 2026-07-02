@@ -4,6 +4,7 @@
 
 ### 🏆 Accepted to ECCV 2026
 
+<!--
 <p align="center">
   Yuwei Yang<sup>1*†</sup>,
   Tianchi Xie<sup>2*†</sup>,
@@ -25,6 +26,7 @@
   <sup>*</sup>Equal contribution &nbsp;&nbsp;
   <sup>†</sup>Work done during an internship at Canva
 </p>
+-->
 
 <!-- TODO: replace with the arXiv link once available, e.g. [![arXiv](...)](https://arxiv.org/abs/XXXX.XXXXX) -->
 ![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?logo=arxiv&logoColor=white)
