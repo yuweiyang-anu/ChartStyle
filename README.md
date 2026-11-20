@@ -28,8 +28,8 @@
 </p>
 -->
 
-<!-- TODO: replace with the arXiv link once available, e.g. [![arXiv](...)](https://arxiv.org/abs/XXXX.XXXXX) -->
-![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?logo=arxiv&logoColor=white)
+[![Paper](https://img.shields.io/badge/Paper-ECCV%202026-b31b1b)](https://link.springer.com/chapter/10.1007/978-3-032-36987-1_18)
+[![Project Page](https://img.shields.io/badge/Project%20Page-ChartStyle--100K-2458BD)](https://chartstyle-100k.github.io/)
 [![Dataset](https://img.shields.io/badge/🤗%20Dataset-ChartStyle--100K-FFD21E)](https://huggingface.co/datasets/ChartFoundation/ChartStyle-100k)
 [![Benchmark](https://img.shields.io/badge/🤗%20Benchmark-ChartStyle--Bench-FF9D00)](https://huggingface.co/datasets/ChartFoundation/ChartStyleBench)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](#-license)
